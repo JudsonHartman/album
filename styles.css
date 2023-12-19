@@ -71,3 +71,34 @@ body {
   width: 100px;
   height: 100px;
 }
+
+/* Regular slide (from the right) */
+.video-container {
+  /* ... your existing styles ... */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: transform 1s ease, opacity 1s ease; /* Transition */
+  /* ... */
+}
+
+.video-container.visible {
+  transform: translateX(0); /* Slide in */
+  opacity: 1;
+}
+
+.video-container.out {
+  transform: translateX(100%); /* Slide out to the right */
+  opacity: 0;
+}
+
+/* Left slide (for the first 6 elements) */
+.video-container.left-slide {
+  transform: translateX(-100%); /* Start off-screen to the left */
+}
+
+.video-container.left-slide.visible {
+  transform: translateX(0); /* Slide in from the left */
+}
+
+.video-container.left-slide.out {
+  transform: translateX(-100%); /* Slide out to the left */
+}

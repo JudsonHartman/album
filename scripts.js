@@ -52,3 +52,38 @@ document.querySelectorAll('.video-container').forEach(container => {
         }
     });
 });
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    // Determines the fade in and out conditions
+    const isFadingOut = rect.top <= 0 || rect.bottom >= windowHeight;
+    const isFadingIn = !isFadingOut;
+
+    return {
+        isFadingIn: isFadingIn,
+        isFadingOut: isFadingOut
+    };
+}
+
+function runOnScroll() {
+    const videoContainers = document.querySelectorAll('.video-container');
+    
+    videoContainers.forEach((element, index) => {
+        const visibility = isInViewport(element);
+
+        if (index < 6) { // Apply left-slide to the first 6 elements
+            element.classList.toggle('left-slide', visibility.isFadingIn || visibility.isFadingOut);
+            element.classList.toggle('visible', visibility.isFadingIn);
+            element.classList.toggle('out', visibility.isFadingOut && !visibility.isFadingIn);
+        } else { // Apply normal behavior to the rest
+            element.classList.toggle('visible', visibility.isFadingIn);
+            element.classList.toggle('out', visibility.isFadingOut && !visibility.isFadingIn);
+        }
+    });
+}
+
+window.addEventListener('scroll', runOnScroll);
+
+
