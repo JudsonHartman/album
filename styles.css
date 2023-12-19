@@ -1,43 +1,56 @@
-.video-container {
-    width: 500px;
-    height: 400px;
-    margin: 100px auto;
-    border-radius: 50px;
-    background: #F0EAD6; 
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .video-header {
-    background: #F0EAD6; 
-    color: #333;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .video-frame {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    background-color: #fcf0e2; /* Placeholder background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .video-frame iframe {
-    width: 90%;
-    height: auto;
-  }
+body {
+  background-color: #fff;
+}
 
-  .play-container {
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 100px; /* Width of the play button container */
-    height: 100px; /* Height of the play button container */
-    background-color: #000;
-    border-radius: 50%;
-  }
-  
+.video-container {
+  width: 500px;
+  height: 400px;
+  margin: 100px auto;
+  border-radius: 10px;
+  background: #F0EAD6;
+  position: relative;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-header {
+  background: #F0EAD6;
+  color: #333;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 20px;
+}
+
+.video-frame {
+  position: relative;
+  height: calc(400px - 40px); /* Adjusting height minus header height */
+  background-color: #fcf0e2;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-frame iframe {
+  width: 90%;
+  height: 90%; /* Adjusted to maintain aspect ratio */
+  max-width: 100%; /* Ensuring it doesn't exceed the container width */
+  max-height: 100%; /* Ensuring it doesn't exceed the container height */
+}
+
+.play-container {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #fcf0e2;
+  border-radius: 50%;
+}
+
+.play-container img {
+  width: 100px;
+  height: 100px;
+}
