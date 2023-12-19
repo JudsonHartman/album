@@ -10,15 +10,63 @@
     <section class="boxes">
         <div class="video-container">
             <div class="video-header">1. Heaven or Hell</div>
-            <div class="video-frame">
-              <!-- Embed YouTube video here -->
-              <iframe src="https://www.youtube.com/embed/rP9NchGNz84" frameborder="0" allowfullscreen></iframe>
+            <div class="video-frame" id="videoFrame">
+                <!-- Embed YouTube video here -->
+                <iframe src="https://www.youtube.com/embed/rP9NchGNz84" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="play-container">
+            <div class="music-player" id="musicPlayer" style="display:none;">
+                <div class="lyrics-container" id="lyricsContainer">
+                    <!-- Lyrics will be displayed here -->
+                  </div>
+                <audio controls>
+                  <source src="./audio/heavenorhell.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="play-container" id="playContainer">
                 <div class="play-button">
-                    <img src="./images/375.png" alt="play button">
+                  <img src="./images/play.png" alt="play button">
                 </div>
             </div>
+            <script>
+                const audioElement = document.querySelector('.music-player audio');
+                const lyricsContainer = document.getElementById('lyricsContainer');
+                const lyrics = [
+                    { time: 0, text: "Line 1 lyrics" },
+                    { time: 10, text: "Line 2 lyrics" },
+                    // ... more lyrics
+                ];
+
+                audioElement.ontimeupdate = () => {
+                    const currentTime = audioElement.currentTime;
+                    const currentLyric = lyrics.find(lyric => currentTime >= lyric.time && (!lyrics[lyrics.indexOf(lyric) + 1] || currentTime < lyrics[lyrics.indexOf(lyric) + 1].time));
+                    if (currentLyric) {
+                    lyricsContainer.textContent = currentLyric.text;
+                    }
+                };
+                
+                const playContainer = document.getElementById('playContainer');
+                const videoFrame = document.getElementById('videoFrame');
+                const musicPlayer = document.getElementById('musicPlayer');
+                const playButtonImage = document.querySelector('.play-button img');
+              
+                playContainer.addEventListener('click', function() {
+                  if (videoFrame.style.display === 'none') {
+                    if (!audioElement.paused) {
+                        audioElement.pause();
+                        audioElement.currentTime = 0;
+                    }
+                    videoFrame.style.display = 'flex';
+                    musicPlayer.style.display = 'none';
+                    playButtonImage.src = './images/play.png';
+                  } else {
+                    videoFrame.style.display = 'none';
+                    musicPlayer.style.display = 'flex';
+                    playButtonImage.src = './images/pause.png';
+                    audioElement.play();
+                  }
+                });
+              </script>
+              
         </div>
         <div class="video-container">
             <div class="video-header">Header Text</div>

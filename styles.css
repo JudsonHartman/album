@@ -16,13 +16,13 @@ body {
   background: #F0EAD6;
   color: #333;
   padding: 10px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
   border-top-left-radius: 20px;
 }
 
-.video-frame {
+.video-frame, .music-player {
   position: relative;
   height: calc(400px - 40px); /* Adjusting height minus header height */
   background-color: #fcf0e2;
@@ -31,13 +31,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
 }
 
 .video-frame iframe {
   width: 90%;
   height: 90%; /* Adjusted to maintain aspect ratio */
-  max-width: 100%; /* Ensuring it doesn't exceed the container width */
-  max-height: 100%; /* Ensuring it doesn't exceed the container height */
+}
+
+.music-player {
+  display: none; /* Hide music player by default */
+  opacity: 1; /* Make sure it is fully visible when displayed */
+  flex-direction: column;
+}
+
+.lyrics-container {
+  padding: 50px;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+.music-player audio {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 50px;
 }
 
 .play-container {
