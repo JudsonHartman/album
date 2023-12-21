@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f2e6d6;
 }
 
 .video-container {
@@ -11,6 +11,7 @@ body {
   position: relative;
   border: 3px solid #000;
   box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .video-header {
@@ -83,7 +84,7 @@ body {
 }
 
 .video-container.visible {
-  transform: translateX(0); /* Slide in */
+  transform: translateX(-50%); /* Slide in */
   opacity: 1;
 }
 
@@ -98,9 +99,27 @@ body {
 }
 
 .video-container.left-slide.visible {
-  transform: translateX(0); /* Slide in from the left */
+  transform: translateX(50%); /* Slide in from the left */
 }
 
 .video-container.left-slide.out {
   transform: translateX(-100%); /* Slide out to the left */
+}
+
+#floating-image {
+  position: absolute;
+  z-index: 0; /* Behind the video containers */
+  top: 750px; /* Adjust as needed */
+  left: 0px; /* Adjust as needed */
+  width: auto; /* Adjust as needed */
+  height: 1500px; /* Maintain aspect ratio */
+}
+
+#floating-image2 {
+  position: absolute;
+  z-index: 0; /* Behind the video containers */
+  top: 2250px; /* Position at the bottom */
+  right: 0px; /* Position from the right */
+  width: auto; /* Adjust as needed */
+  height: 1250px; /* Maintain aspect ratio */
 }

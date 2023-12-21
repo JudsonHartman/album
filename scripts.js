@@ -685,4 +685,25 @@ function runOnScroll() {
 
 window.addEventListener('scroll', runOnScroll);
 
+function parallaxScroll() {
+    var scrolled = window.pageYOffset;
+    var parallaxImage = document.getElementById('floating-image');
+    // Adjust the '0.5' to control the speed of the parallax effect
+    var coords = (50 + scrolled * 0.5) + 'px';
+    parallaxImage.style.top = coords;
+}
 
+  // Event listener for window scroll
+window.addEventListener('scroll', parallaxScroll);
+
+function parallaxScroll2() {
+    var scrolled = window.pageYOffset;
+    var parallaxImage2 = document.getElementById('floating-image2');
+    // Adjust the '0.5' to control the speed of the parallax effect
+    // The starting position is now 1500px, so add this to the scrolled amount
+    var coords = (2250 + scrolled * 0.5) + 'px';
+    parallaxImage2.style.top = coords;
+  }
+  
+  // Event listener for window scroll
+  window.addEventListener('scroll', parallaxScroll2);
