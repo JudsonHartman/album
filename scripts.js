@@ -611,19 +611,14 @@ const allLyrics = {
     ]
 };
 
-// Function to handle each video container
 document.querySelectorAll('.video-container').forEach(container => {
     const playButtonImage = container.querySelector('.play-button img');
     const videoFrame = container.querySelector('.video-frame');
     const musicPlayer = container.querySelector('.music-player');
     const audioElement = container.querySelector('.music-player audio');
     const lyricsContainer = container.querySelector('.lyrics-container');
-
-    // Extract the audio file name
     const audioSrc = audioElement.querySelector('source').getAttribute('src');
     const audioFileName = audioSrc.split('/').pop();
-
-    // Get the lyrics for this audio file
     const lyrics = allLyrics[audioFileName];
 
     audioElement.ontimeupdate = () => {
@@ -656,7 +651,6 @@ function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    // Determines the fade in and out conditions
     const isFadingOut = rect.top <= 0 || rect.bottom >= windowHeight;
     const isFadingIn = !isFadingOut;
 
@@ -672,11 +666,11 @@ function runOnScroll() {
     videoContainers.forEach((element, index) => {
         const visibility = isInViewport(element);
 
-        if (index < 6) { // Apply left-slide to the first 6 elements
+        if (index < 6) { 
             element.classList.toggle('left-slide', visibility.isFadingIn || visibility.isFadingOut);
             element.classList.toggle('visible', visibility.isFadingIn);
             element.classList.toggle('out', visibility.isFadingOut && !visibility.isFadingIn);
-        } else { // Apply normal behavior to the rest
+        } else { 
             element.classList.toggle('visible', visibility.isFadingIn);
             element.classList.toggle('out', visibility.isFadingOut && !visibility.isFadingIn);
         }
@@ -688,22 +682,17 @@ window.addEventListener('scroll', runOnScroll);
 function parallaxScroll() {
     var scrolled = window.pageYOffset;
     var parallaxImage = document.getElementById('floating-image');
-    // Adjust the '0.5' to control the speed of the parallax effect
     var coords = (50 + scrolled * 0.5) + 'px';
     parallaxImage.style.top = coords;
 }
 
-  // Event listener for window scroll
 window.addEventListener('scroll', parallaxScroll);
 
 function parallaxScroll2() {
     var scrolled = window.pageYOffset;
     var parallaxImage2 = document.getElementById('floating-image2');
-    // Adjust the '0.5' to control the speed of the parallax effect
-    // The starting position is now 1500px, so add this to the scrolled amount
-    var coords = (2250 + scrolled * 0.5) + 'px';
+    var coords = (2200 + scrolled * 0.5) + 'px';
     parallaxImage2.style.top = coords;
-  }
+}
   
-  // Event listener for window scroll
-  window.addEventListener('scroll', parallaxScroll2);
+window.addEventListener('scroll', parallaxScroll2);

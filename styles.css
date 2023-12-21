@@ -2,6 +2,8 @@ body {
   background-color: #f2e6d6;
 }
 
+/* video div styling */
+
 .video-container {
   width: 500px;
   height: 400px;
@@ -43,8 +45,8 @@ body {
 }
 
 .music-player {
-  display: none; /* Hide music player by default */
-  opacity: 1; /* Make sure it is fully visible when displayed */
+  display: none; 
+  opacity: 1; 
   flex-direction: column;
 }
 
@@ -75,51 +77,53 @@ body {
   height: 100px;
 }
 
-/* Regular slide (from the right) */
+/* Side in animations */
+
 .video-container {
-  /* ... your existing styles ... */
-  transform: translateX(100%); /* Start off-screen to the right */
-  transition: transform 1s ease, opacity 1s ease; /* Transition */
-  /* ... */
+  transform: translateX(100%); 
+  transition: transform 1s ease, opacity 1s ease; 
 }
 
 .video-container.visible {
-  transform: translateX(-50%); /* Slide in */
+  transform: translateX(-50%); 
   opacity: 1;
 }
 
 .video-container.out {
-  transform: translateX(100%); /* Slide out to the right */
+  transform: translateX(100%); 
   opacity: 0;
 }
 
-/* Left slide (for the first 6 elements) */
 .video-container.left-slide {
-  transform: translateX(-100%); /* Start off-screen to the left */
+  transform: translateX(-100%); 
 }
 
 .video-container.left-slide.visible {
-  transform: translateX(50%); /* Slide in from the left */
+  transform: translateX(50%); 
 }
 
 .video-container.left-slide.out {
-  transform: translateX(-100%); /* Slide out to the left */
+  transform: translateX(-100%); 
 }
+
+/* background images */
 
 #floating-image {
   position: absolute;
-  z-index: 0; /* Behind the video containers */
-  top: 750px; /* Adjust as needed */
-  left: 0px; /* Adjust as needed */
-  width: auto; /* Adjust as needed */
-  height: 1500px; /* Maintain aspect ratio */
+  z-index: 0; 
+  top: 750px; 
+  left: 0px; 
+  width: auto; 
+  height: 1500px; 
 }
 
 #floating-image2 {
   position: absolute;
-  z-index: 0; /* Behind the video containers */
-  top: 2250px; /* Position at the bottom */
-  right: 0px; /* Position from the right */
-  width: auto; /* Adjust as needed */
-  height: 1250px; /* Maintain aspect ratio */
+  z-index: 0; 
+  top: 2200px; 
+  right: 0px; 
+  width: auto; 
+  height: 1250px; 
 }
+
+/* Glassmorphism/clouds styling */
