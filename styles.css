@@ -9,7 +9,8 @@ body {
   border-radius: 10px;
   background: #F0EAD6;
   position: relative;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #000;
+  box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.3);
 }
 
 .video-header {
@@ -32,11 +33,12 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 1;
+  border-bottom: 3px solid #000;
 }
 
 .video-frame iframe {
   width: 90%;
-  height: 90%; /* Adjusted to maintain aspect ratio */
+  height: auto; /* Adjusted to maintain aspect ratio */
 }
 
 .music-player {
