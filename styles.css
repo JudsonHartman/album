@@ -39,7 +39,7 @@ body {
 
 .video-frame iframe {
   width: 90%;
-  height: auto; /* Adjusted to maintain aspect ratio */
+  height: 90%; /* Adjusted to maintain aspect ratio */
 }
 
 .music-player {
