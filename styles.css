@@ -2,6 +2,13 @@ body {
   background-color: #f2e6d6;
 }
 
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
 /* video div styling */
 
 .video-container {
@@ -21,6 +28,7 @@ body {
   color: #333;
   padding: 10px;
   font-size: 24px;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   text-align: center;
   border-top-left-radius: 20px;
@@ -54,6 +62,7 @@ body {
   padding: 50px;
   margin-bottom: 50px;
   font-size: 24px;
+  font-family: 'Pacifico', cursive;
 }
 
 .music-player audio {
@@ -111,7 +120,7 @@ body {
 #floating-image {
   position: absolute;
   z-index: 0; 
-  top: 750px; 
+  top: 250px; 
   left: 0px; 
   width: auto; 
   height: 1500px; 
@@ -120,7 +129,7 @@ body {
 #floating-image2 {
   position: absolute;
   z-index: 0; 
-  top: 2200px; 
+  top: 2450px; 
   right: 0px; 
   width: auto; 
   height: 1250px; 

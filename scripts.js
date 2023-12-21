@@ -682,7 +682,7 @@ window.addEventListener('scroll', runOnScroll);
 function parallaxScroll() {
     var scrolled = window.pageYOffset;
     var parallaxImage = document.getElementById('floating-image');
-    var coords = (50 + scrolled * 0.5) + 'px';
+    var coords = (250 + scrolled * 0.5) + 'px';
     parallaxImage.style.top = coords;
 }
 
@@ -691,7 +691,7 @@ window.addEventListener('scroll', parallaxScroll);
 function parallaxScroll2() {
     var scrolled = window.pageYOffset;
     var parallaxImage2 = document.getElementById('floating-image2');
-    var coords = (2200 + scrolled * 0.5) + 'px';
+    var coords = (2450 + scrolled * 0.5) + 'px';
     parallaxImage2.style.top = coords;
 }
   
