@@ -1,5 +1,6 @@
 body {
   background-color: #f2e6d6;
+  overflow-x: hidden;
 }
 
 .header {
@@ -7,6 +8,7 @@ body {
   height: auto;
   display: flex;
   justify-content: center;
+  position: relative;
   z-index: 1;
 }
 
