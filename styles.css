@@ -1,6 +1,9 @@
 body {
   background-color: #f2e6d6;
   overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -39,7 +42,7 @@ body {
 
 .video-frame, .music-player {
   position: relative;
-  height: calc(400px - 40px); /* Adjusting height minus header height */
+  height: calc(400px - 40px); 
   background-color: #fcf0e2;
   border-radius: 10px;
   border-top-left-radius: 0px;
@@ -52,7 +55,7 @@ body {
 
 .video-frame iframe {
   width: 90%;
-  height: 90%; /* Adjusted to maintain aspect ratio */
+  height: 90%; 
 }
 
 .music-player {
@@ -139,3 +142,36 @@ body {
 }
 
 /* Glassmorphism/clouds styling */
+
+.glassmorphism-top, .glassmorphism-bottom {
+  position: absolute;
+  z-index: 0;
+}
+
+.glassmorphism-top {
+  width: 110%;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 1200px;
+  background: linear-gradient(to bottom, rgba(0, 123, 255, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+.glassmorphism-top:nth-child(2) {
+  height: 2400px;
+  background: linear-gradient(to bottom, rgba(0, 123, 255, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+.glassmorphism-top:nth-child(3) {
+  height: 3600px;
+  background: linear-gradient(to bottom, rgba(0, 123, 255, 0.3), rgba(255, 255, 255, 0));
+}
+
+.glassmorphism-bottom {
+  width: 110%;
+  top: 3600px;
+  left: 0;
+  right: 0;
+  height: 3200px;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
