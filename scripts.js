@@ -691,7 +691,7 @@ window.addEventListener('scroll', parallaxScroll);
 function parallaxScroll2() {
     var scrolled = window.pageYOffset;
     var parallaxImage2 = document.getElementById('floating-image2');
-    var coords = (2450 + scrolled * 0.5) + 'px';
+    var coords = (2400 + scrolled * 0.5) + 'px';
     parallaxImage2.style.top = coords;
 }
   
